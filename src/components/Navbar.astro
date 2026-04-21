@@ -1,0 +1,53 @@
+---
+---
+<nav id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-6 h-16 flex items-center justify-between">
+    <!-- Logo -->
+    <a href="/" class="flex items-center gap-2.5 group">
+      <img
+        src="/logo/mi_caja.png"
+        alt="MI CAJA"
+        class="h-9 w-auto"
+        onerror="this.style.display='none'"
+      />
+      <span class="font-display font-bold text-xl tracking-tight text-text">MI CAJA</span>
+    </a>
+
+    <!-- Links (desktop) -->
+    <div class="hidden md:flex items-center gap-8">
+      <a href="#funciones" class="text-sm text-muted hover:text-text transition-colors duration-200">Funciones</a>
+      <a href="#precio"    class="text-sm text-muted hover:text-text transition-colors duration-200">Precio</a>
+      <a href="#soporte"   class="text-sm text-muted hover:text-text transition-colors duration-200">Soporte</a>
+      <a href="#contacto"  class="text-sm text-muted hover:text-text transition-colors duration-200">Contacto</a>
+    </div>
+
+    <!-- CTA -->
+    <a
+      href="https://wa.me/526141000000?text=Hola%2C%20me%20interesa%20MI%20CAJA%20punto%20de%20venta."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="bg-verde text-dark font-display font-bold text-sm px-5 py-2.5 rounded-full
+             hover:glow-verde hover:-translate-y-0.5 active:translate-y-0
+             transition-all duration-200"
+    >
+      Obtener ahora →
+    </a>
+  </div>
+</nav>
+
+<script>
+  const navbar = document.getElementById('navbar')!;
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('navbar-scrolled', window.scrollY > 20);
+  }, { passive: true });
+</script>
+
+<style>
+  #navbar { background: transparent; }
+  #navbar.navbar-scrolled {
+    background: rgba(7, 9, 15, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+  }
+</style>

@@ -1,0 +1,67 @@
+---
+const testimonios = [
+  {
+    quote: 'Antes llevaba todo en un cuaderno. Ahora sé exactamente cuánto vendí cada día, quién me debe y qué producto se me está acabando. MI CAJA cambió cómo trabajo.',
+    nombre: 'Doña Rosa Martínez',
+    negocio: 'Abarrotes La Esperanza',
+    lugar: 'Chihuahua, Chih.',
+    inicial: 'R',
+  },
+  {
+    quote: 'Lo que más me gustó es el soporte. Me llaman ellos cuando hay cualquier problema. En otros sistemas te dejan solo con un manual en inglés.',
+    nombre: 'Carlos Domínguez',
+    negocio: 'Minisuper Don Carlitos',
+    lugar: 'Delicias, Chih.',
+    inicial: 'C',
+  },
+  {
+    quote: 'Con los fiados siempre perdía dinero porque no llevaba bien la cuenta. Ahora el sistema me avisa cuándo cobrar y nunca se me olvida un cliente.',
+    nombre: 'María Luisa Acosta',
+    negocio: 'Fonda La Nortita',
+    lugar: 'Cuauhtémoc, Chih.',
+    inicial: 'M',
+  },
+];
+---
+
+<section class="py-24">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="text-center mb-16 reveal">
+      <p class="text-muted text-xs uppercase tracking-[0.2em] font-semibold mb-3">Testimonios</p>
+      <h2 class="font-display font-bold text-4xl md:text-5xl tracking-tight">
+        Lo que dicen los <span class="text-gradient">negocios de Chihuahua</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      {testimonios.map((t) => (
+        <div
+          class="reveal rounded-2xl p-7 flex flex-col gap-5"
+          style="background: #1a1e28; border: 1px solid rgba(255,255,255,0.07)"
+        >
+          <!-- Stars -->
+          <div class="flex gap-1">
+            {Array.from({ length: 5 }).map(() => (
+              <span class="text-verde text-sm">★</span>
+            ))}
+          </div>
+
+          <p class="text-text/90 text-base leading-relaxed flex-1">"{t.quote}"</p>
+
+          <div class="flex items-center gap-3 pt-4" style="border-top: 1px solid rgba(255,255,255,0.07)">
+            <div
+              class="w-10 h-10 rounded-full flex items-center justify-center font-display font-bold text-dark flex-shrink-0"
+              style="background: linear-gradient(135deg, #1AE17A, #1A6CFF)"
+            >
+              {t.inicial}
+            </div>
+            <div>
+              <p class="font-display font-bold text-sm text-text">{t.nombre}</p>
+              <p class="text-muted text-xs">{t.negocio} · {t.lugar}</p>
+            </div>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

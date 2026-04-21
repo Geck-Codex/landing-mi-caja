@@ -1,0 +1,107 @@
+@import "tailwindcss";
+
+@theme {
+  --color-verde:  #1AE17A;
+  --color-azul:   #1A6CFF;
+  --color-dark:   #13161e;
+  --color-card:   #1a1e28;
+  --color-card2:  #1e2332;
+  --color-text:   #ECEEF4;
+  --color-muted:  rgba(236, 238, 244, 0.45);
+
+  --font-display: 'Poppins', sans-serif;
+  --font-body:    'Poppins', sans-serif;
+
+  --animate-marquee:    marquee 22s linear infinite;
+  --animate-orb-float1: orbFloat1 12s ease-in-out infinite;
+  --animate-orb-float2: orbFloat2 15s ease-in-out infinite;
+  --animate-fade-up:    fadeUp 0.7s ease both;
+  --animate-pulse-dot:  pulseDot 2s ease infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@keyframes orbFloat1 {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(60px, 40px); }
+}
+@keyframes orbFloat2 {
+  0%, 100% { transform: translate(0, 0); }
+  50%      { transform: translate(-40px, -60px); }
+}
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulseDot {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50%      { opacity: 0.4; transform: scale(1.5); }
+}
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body {
+    background-color: #13161e;
+    color: #ECEEF4;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+  }
+  h1, h2, h3, h4 { font-family: 'Poppins', sans-serif; }
+}
+
+@layer utilities {
+  .text-gradient {
+    background: linear-gradient(90deg, #1AE17A, #1A6CFF);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .glow-verde { box-shadow: 0 0 40px rgba(26, 225, 122, 0.4); }
+  .glow-azul  { box-shadow: 0 0 40px rgba(26, 108, 255, 0.35); }
+
+  .noise::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 999;
+    opacity: 0.025;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .marquee-fade::before,
+  .marquee-fade::after {
+    content: '';
+    position: absolute;
+    top: 0; bottom: 0;
+    width: 200px;
+    z-index: 2;
+    pointer-events: none;
+  }
+  .marquee-fade::before { left: 0; background: linear-gradient(to right, #13161e, transparent); }
+  .marquee-fade::after  { right: 0; background: linear-gradient(to left, #13161e, transparent); }
+
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal { transition: none; opacity: 1; transform: none; }
+  * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; }
+}

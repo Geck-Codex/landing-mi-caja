@@ -1,0 +1,127 @@
+---
+const cases = [
+  {
+    type:   'Abarrotes',
+    title:  'Para tu abarrote',
+    desc:   'Cobra, controla stock y fiados en un solo lugar.',
+    video:  '/videos/abarrote.mp4',
+    color:  '#1AE17A',
+  },
+  {
+    type:   'Restaurantes',
+    title:  'Para tu restaurante',
+    desc:   'Mesas, órdenes rápidas y corte de caja sin errores.',
+    video:  '/videos/restaurante.mp4',
+    color:  '#1A6CFF',
+  },
+  {
+    type:   'Fondas',
+    title:  'Para tu fonda',
+    desc:   'Control de platillos del día, fiados y caja fácil.',
+    video:  '/videos/fonda.mp4',
+    color:  '#1AE17A',
+  },
+  {
+    type:   'Minisupers',
+    title:  'Para tu minisúper',
+    desc:   'Inventario amplio, múltiples cajeros y reportes diarios.',
+    video:  '/videos/minisupeer.mp4',
+    color:  '#1A6CFF',
+  },
+  {
+    type:   'Farmacias',
+    title:  'Para tu farmacia',
+    desc:   'Escaneo de código de barras y alertas de caducidad.',
+    video:  '/videos/farmacia.mp4',
+    color:  '#1AE17A',
+  },
+  {
+    type:   'Estéticas',
+    title:  'Para tu estética',
+    desc:   'Servicios, productos y clientes habituales en un sistema.',
+    video:  '/videos/estetica.mp4',
+    color:  '#1A6CFF',
+  },
+];
+---
+
+<section class="py-24 max-w-7xl mx-auto px-6">
+  <div class="text-center mb-16 reveal">
+    <p class="text-muted text-xs uppercase tracking-[0.2em] font-semibold mb-3">Casos de uso</p>
+    <h2 class="font-display font-bold text-4xl md:text-5xl tracking-tight">
+      Hecho para tu <span class="text-gradient">tipo de negocio</span>
+    </h2>
+    <p class="text-muted mt-4 max-w-xl mx-auto">
+      Sin importar el giro, MI CAJA se adapta a cómo opera tu negocio en Chihuahua.
+    </p>
+  </div>
+
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+    {cases.map((c) => (
+      <div
+        class="video-card group relative overflow-hidden rounded-2xl cursor-pointer"
+        style="height: 400px"
+        data-video
+      >
+        <!-- Fallback gradient bg -->
+        <div
+          class="absolute inset-0"
+          style={`background: linear-gradient(135deg, ${c.color}15, #13161e)`}
+        ></div>
+
+        <video
+          muted
+          loop
+          playsinline
+          preload="none"
+          class="absolute inset-0 w-full h-full object-cover transition-transform duration-500"
+          style="transition-timing-function: cubic-bezier(.25,.46,.45,.94)"
+        >
+          <source src={c.video} type="video/mp4" />
+        </video>
+
+        <!-- Overlay -->
+        <div
+          class="overlay absolute inset-0 transition-opacity duration-500"
+          style="background: rgba(7,9,15,0.72)"
+        ></div>
+
+        <!-- Content -->
+        <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
+          <span
+            class="text-xs font-semibold uppercase tracking-[0.2em]"
+            style={`color: ${c.color}`}
+          >
+            {c.type}
+          </span>
+          <h3 class="font-display font-bold text-2xl text-text mt-1">{c.title}</h3>
+          <p
+            class="text-muted text-sm mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300 leading-relaxed"
+          >
+            {c.desc}
+          </p>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll<HTMLElement>('[data-video]').forEach((card) => {
+    const video = card.querySelector('video')!;
+    const overlay = card.querySelector<HTMLElement>('.overlay')!;
+    const videoEl = card.querySelector<HTMLVideoElement>('video')!;
+
+    card.addEventListener('mouseenter', () => {
+      video?.play().catch(() => {});
+      overlay.style.background = 'rgba(7,9,15,0.2)';
+      videoEl.style.transform = 'scale(1.04)';
+    });
+
+    card.addEventListener('mouseleave', () => {
+      video?.pause();
+      overlay.style.background = 'rgba(7,9,15,0.72)';
+      videoEl.style.transform = 'scale(1)';
+    });
+  });
+</script>

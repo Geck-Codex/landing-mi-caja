@@ -1,0 +1,117 @@
+---
+const negocios = [
+  'Abarrote', 'Restaurante', 'Fonda', 'Minisúper', 'Farmacia',
+  'Estética', 'Pizzería', 'Carnicería', 'Cafetería', 'Panadería',
+  'Heladería', 'Otro tipo de negocio',
+];
+
+const badges = [
+  { icon: '✅', text: '$3,000 pago único' },
+  { icon: '💬', text: 'Soporte 24/7 incluido' },
+  { icon: '📍', text: 'Chihuahua, México' },
+  { icon: '⚡', text: 'Sin mensualidades' },
+];
+---
+
+<section id="contacto" class="py-24 relative overflow-hidden">
+  <!-- BG glow -->
+  <div
+    class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full blur-[100px] pointer-events-none"
+    style="background: rgba(26,225,122,0.07)"
+  ></div>
+
+  <div class="max-w-3xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-12 reveal">
+      <p class="text-muted text-xs uppercase tracking-[0.2em] font-semibold mb-3">Empecemos</p>
+      <h2 class="font-display font-bold text-4xl md:text-5xl tracking-tight">
+        Tu negocio merece un<br />
+        <span class="text-gradient">sistema profesional</span>
+      </h2>
+      <p class="text-muted mt-5 text-lg">
+        Cuéntanos sobre tu negocio y te enviamos información personalizada por WhatsApp.
+        Sin presión, sin spam.
+      </p>
+    </div>
+
+    <!-- Form -->
+    <div
+      class="reveal rounded-2xl p-8"
+      style="background: #1a1e28; border: 1px solid rgba(255,255,255,0.07)"
+    >
+      <form id="cta-form" class="flex flex-col gap-5">
+
+        <div class="flex flex-col gap-2">
+          <label for="nombre" class="text-sm font-semibold text-text">Tu nombre</label>
+          <input
+            id="nombre"
+            type="text"
+            placeholder="Ej. Juan Pérez"
+            class="w-full px-4 py-3 rounded-xl text-text placeholder:text-muted/60 text-sm
+                   focus:outline-none transition-all duration-200"
+            style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1)"
+            onfocus="this.style.borderColor='rgba(26,225,122,0.4)'"
+            onblur="this.style.borderColor='rgba(255,255,255,0.1)'"
+          />
+        </div>
+
+        <div class="flex flex-col gap-2">
+          <label for="tipo" class="text-sm font-semibold text-text">Tipo de negocio</label>
+          <select
+            id="tipo"
+            class="w-full px-4 py-3 rounded-xl text-text text-sm
+                   focus:outline-none transition-all duration-200 cursor-pointer"
+            style="background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.1)"
+            onfocus="this.style.borderColor='rgba(26,225,122,0.4)'"
+            onblur="this.style.borderColor='rgba(255,255,255,0.1)'"
+          >
+            <option value="" style="background:#1a1e28">Selecciona tu tipo de negocio</option>
+            {negocios.map((n) => (
+              <option value={n} style="background:#1a1e28">{n}</option>
+            ))}
+          </select>
+        </div>
+
+        <button
+          type="submit"
+          class="w-full bg-verde text-dark font-display font-bold text-base py-4 rounded-xl
+                 hover:glow-verde hover:-translate-y-0.5 active:translate-y-0
+                 transition-all duration-200"
+        >
+          Obtener MI CAJA por WhatsApp →
+        </button>
+
+        <p class="text-muted/60 text-xs text-center">
+          Al hacer clic te redirigiremos a WhatsApp con un mensaje pre-armado.
+          No guardamos tus datos.
+        </p>
+      </form>
+    </div>
+
+    <!-- Trust badges -->
+    <div class="flex flex-wrap justify-center gap-3 mt-8 reveal">
+      {badges.map((b) => (
+        <div
+          class="flex items-center gap-2 px-4 py-2 rounded-full text-sm font-semibold text-muted"
+          style="background: rgba(255,255,255,0.03); border: 1px solid rgba(255,255,255,0.07)"
+        >
+          <span>{b.icon}</span>
+          <span>{b.text}</span>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById('cta-form') as HTMLFormElement;
+  form?.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const nombre = (document.getElementById('nombre') as HTMLInputElement).value.trim() || '[nombre]';
+    const tipo   = (document.getElementById('tipo')   as HTMLSelectElement).value     || '[tipo de negocio]';
+
+    const msg = encodeURIComponent(
+      `Hola, me interesa MI CAJA punto de venta.\nMi negocio es: ${tipo}\nMi nombre es: ${nombre}`
+    );
+    window.open(`https://wa.me/526141000000?text=${msg}`, '_blank', 'noopener,noreferrer');
+  });
+</script>

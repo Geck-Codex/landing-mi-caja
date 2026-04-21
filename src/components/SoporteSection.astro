@@ -1,0 +1,106 @@
+---
+---
+<section id="soporte" class="py-24 relative overflow-hidden">
+  <div
+    class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[350px] rounded-full blur-[120px] pointer-events-none"
+    style="background: rgba(26,108,255,0.05)"
+  ></div>
+
+  <div class="max-w-5xl mx-auto px-6 relative z-10">
+    <div class="text-center mb-14 reveal">
+      <p class="text-muted text-xs uppercase tracking-[0.2em] font-semibold mb-3">Soporte</p>
+      <h2 class="font-display font-bold text-4xl md:text-5xl tracking-tight">
+        Somos de <span class="text-gradient">Chihuahua</span>
+      </h2>
+      <p class="text-muted mt-5 max-w-2xl mx-auto text-lg leading-relaxed">
+        Cuando tengas un problema con MI CAJA,
+        hay una persona real del estado que te va a responder por WhatsApp.
+        Sin bots, sin call centers, sin hablar en otro idioma.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+
+      <!-- Canal principal: WhatsApp -->
+      <div
+        class="reveal rounded-2xl p-7 flex flex-col gap-5"
+        style="background: rgba(26,225,122,0.04); border: 1px solid rgba(26,225,122,0.2)"
+      >
+        <div class="flex items-center gap-3">
+          <span class="text-4xl">💬</span>
+          <div>
+            <h3 class="font-display font-bold text-lg text-text">Soporte por WhatsApp</h3>
+            <span class="text-xs font-semibold text-verde">Incluido en tu compra</span>
+          </div>
+        </div>
+        <p class="text-muted text-sm leading-relaxed">
+          Escríbenos cuando tengas cualquier duda o problema con el sistema.
+          Te respondemos nosotros directamente — no un robot.
+        </p>
+        <a
+          href="https://wa.me/526141000000?text=Hola%2C%20tengo%20una%20duda%20sobre%20MI%20CAJA."
+          target="_blank"
+          rel="noopener noreferrer"
+          class="mt-auto inline-flex items-center gap-2 bg-verde text-dark font-display font-bold text-sm px-5 py-3 rounded-xl
+                 hover:glow-verde hover:-translate-y-0.5 transition-all duration-200 self-start"
+        >
+          Escribirnos ahora →
+        </a>
+      </div>
+
+      <!-- Contexto local -->
+      <div
+        class="reveal rounded-2xl p-7 flex flex-col gap-5"
+        style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.07)"
+      >
+        <div class="flex items-center gap-3">
+          <span class="text-4xl">📍</span>
+          <div>
+            <h3 class="font-display font-bold text-lg text-text">Equipo local</h3>
+            <span class="text-xs font-semibold text-muted">Chihuahua, México</span>
+          </div>
+        </div>
+        <p class="text-muted text-sm leading-relaxed">
+          No somos una empresa enorme con procesos lentos.
+          Somos un equipo pequeño del estado que conoce
+          cómo operan los negocios de aquí.
+        </p>
+        <div class="flex flex-wrap gap-2 mt-auto">
+          {['En español', 'Sin contratos', 'Respuesta directa'].map((tag) => (
+            <span
+              class="text-xs px-3 py-1.5 rounded-full font-semibold"
+              style="background: rgba(255,255,255,0.04); color: rgba(236,238,244,0.6); border: 1px solid rgba(255,255,255,0.08)"
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+    </div>
+
+    <!-- Strip inferior -->
+    <div
+      class="reveal rounded-2xl p-7 md:p-10 flex flex-col md:flex-row items-center justify-between gap-6"
+      style="background: rgba(26,225,122,0.04); border: 1px solid rgba(26,225,122,0.15)"
+    >
+      <div>
+        <h3 class="font-display font-bold text-xl md:text-2xl tracking-tight">
+          ¿Tienes dudas antes de comprar?
+        </h3>
+        <p class="text-muted mt-1.5 text-sm">
+          Sin compromiso y sin presión. Te explicamos todo lo que necesitas saber.
+        </p>
+      </div>
+      <a
+        href="https://wa.me/526141000000?text=Hola%2C%20tengo%20una%20pregunta%20sobre%20MI%20CAJA%20antes%20de%20comprarlo."
+        target="_blank"
+        rel="noopener noreferrer"
+        class="flex-shrink-0 bg-verde text-dark font-display font-bold text-sm px-7 py-3.5 rounded-xl
+               hover:glow-verde hover:-translate-y-0.5 active:translate-y-0
+               transition-all duration-200 whitespace-nowrap"
+      >
+        Preguntar por WhatsApp →
+      </a>
+    </div>
+  </div>
+</section>

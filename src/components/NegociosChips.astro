@@ -1,0 +1,50 @@
+---
+const negocios = [
+  { emoji: '🛒', label: 'Abarrotes' },
+  { emoji: '🍽️', label: 'Restaurantes' },
+  { emoji: '🥘', label: 'Fondas' },
+  { emoji: '🧃', label: 'Minisupers' },
+  { emoji: '💊', label: 'Farmacias' },
+  { emoji: '✂️', label: 'Estéticas' },
+  { emoji: '🍕', label: 'Pizzerías' },
+  { emoji: '🏪', label: 'Locales' },
+  { emoji: '🥩', label: 'Carnicerías' },
+  { emoji: '☕', label: 'Cafeterías' },
+  { emoji: '🧁', label: 'Panaderías' },
+  { emoji: '🍦', label: 'Heladerías' },
+];
+---
+
+<section class="py-16">
+  <div class="max-w-7xl mx-auto px-6 mb-10 text-center reveal">
+    <p class="text-muted text-xs uppercase tracking-[0.2em] font-semibold mb-3">Para cada tipo de negocio</p>
+    <h2 class="font-display font-bold text-3xl md:text-4xl tracking-tight">
+      Funciona para tu negocio en <span class="text-gradient">Chihuahua</span>
+    </h2>
+  </div>
+
+  <div class="relative overflow-hidden">
+    <div
+      class="flex gap-3 overflow-x-auto scrollbar-hide pb-2 px-6"
+      id="negocios-scroll"
+    >
+      {negocios.map((n) => (
+        <div
+          class="flex-none flex items-center gap-2.5 rounded-full px-5 py-3
+                 cursor-default transition-all duration-300 group
+                 hover:-translate-y-0.5"
+          style="background: #1a1e28; border: 1px solid rgba(255,255,255,0.07)"
+          onmouseover="this.style.borderColor='rgba(26,225,122,0.3)'; this.style.background='rgba(26,225,122,0.05)'"
+          onmouseout="this.style.borderColor='rgba(255,255,255,0.07)'; this.style.background='#1a1e28'"
+        >
+          <span class="text-2xl leading-none">{n.emoji}</span>
+          <span class="font-display font-semibold text-sm text-text whitespace-nowrap">{n.label}</span>
+        </div>
+      ))}
+    </div>
+
+    <!-- Edge fades -->
+    <div class="absolute left-0 top-0 bottom-2 w-16 bg-gradient-to-r from-dark to-transparent pointer-events-none z-10"></div>
+    <div class="absolute right-0 top-0 bottom-2 w-16 bg-gradient-to-l from-dark to-transparent pointer-events-none z-10"></div>
+  </div>
+</section>
