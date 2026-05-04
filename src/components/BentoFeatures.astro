@@ -22,102 +22,32 @@ const features = [
     </p>
   </div>
 
-  <!-- Bento grid -->
   <div class="grid grid-cols-12 gap-4">
 
-    <!-- POS Mockup — col 8, row 2 -->
     <div
-      class="bento-card col-span-12 lg:col-span-8 row-span-2 rounded-2xl p-6 min-h-[380px] flex flex-col overflow-hidden reveal"
-      style="background: #1a1e28; border: 1px solid rgba(255,255,255,0.07)"
+      class="bento-card col-span-12 lg:col-span-8 row-span-2 rounded-2xl overflow-hidden reveal"
+      style="background: #1a1e28; border: 1px solid rgba(255,255,255,0.07); min-height: 380px"
     >
-      <div class="mb-4">
-        <span class="text-muted text-xs uppercase tracking-widest font-semibold">Vista previa</span>
-        <h3 class="font-display font-bold text-xl mt-1">MI CAJA en acción</h3>
-      </div>
-
-      <!-- Simulated POS UI -->
-      <div class="flex-1 rounded-xl overflow-hidden flex flex-col" style="background: #1e2332; border: 1px solid rgba(255,255,255,0.06)">
-        <!-- POS Header -->
-        <div class="flex items-center justify-between px-4 py-3" style="border-bottom: 1px solid rgba(255,255,255,0.06)">
-          <div class="flex items-center gap-2">
-            <div class="w-2 h-2 rounded-full bg-verde animate-pulse-dot"></div>
-            <span class="font-display font-bold text-sm text-verde">MI CAJA · POS</span>
-          </div>
-          <span class="text-muted text-xs">Cajero: Carlos · Turno A</span>
-        </div>
-
-        <div class="flex flex-1 overflow-hidden">
-          <!-- Products list -->
-          <div class="flex-1 p-4 space-y-2 overflow-hidden">
-            {[
-              { name: 'Coca-Cola 600ml', qty: 2, price: '$36.00' },
-              { name: 'Sabritas 40g', qty: 1, price: '$15.00' },
-              { name: 'Pan Bimbo 560g', qty: 1, price: '$45.00' },
-              { name: 'Leche Lala 1L', qty: 3, price: '$84.00' },
-            ].map((item) => (
-              <div
-                class="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm"
-                style="background: rgba(255,255,255,0.03)"
-              >
-                <div class="flex items-center gap-3">
-                  <span class="text-muted text-xs w-4 text-center">{item.qty}×</span>
-                  <span class="text-text">{item.name}</span>
-                </div>
-                <span class="text-verde font-semibold">{item.price}</span>
-              </div>
-            ))}
-            <div
-              class="flex items-center justify-between px-3 py-2.5 rounded-lg text-sm"
-              style="background: rgba(26,225,122,0.07); border: 1px solid rgba(26,225,122,0.15)"
-            >
-              <div class="flex items-center gap-3">
-                <span class="text-muted text-xs w-4 text-center">1×</span>
-                <span class="text-text">Jabón Rey 150g</span>
-              </div>
-              <span class="text-verde font-semibold">$12.00</span>
-            </div>
-          </div>
-
-          <!-- Right panel: total + numpad hint -->
-          <div class="w-40 p-4 flex flex-col" style="border-left: 1px solid rgba(255,255,255,0.06)">
-            <div class="space-y-2 mb-auto text-xs">
-              <div class="flex justify-between text-muted">
-                <span>Subtotal</span><span>$192.00</span>
-              </div>
-              <div class="flex justify-between text-muted">
-                <span>Descuento</span><span class="text-verde">-$0.00</span>
-              </div>
-              <div style="border-top: 1px solid rgba(255,255,255,0.06)" class="pt-2">
-                <div class="flex justify-between">
-                  <span class="font-display font-bold text-text">Total</span>
-                  <span class="font-display font-bold text-verde text-base">$192.00</span>
-                </div>
-              </div>
-            </div>
-            <button
-              class="mt-4 w-full py-2.5 rounded-lg font-display font-bold text-dark text-sm bg-verde
-                     hover:opacity-90 transition-opacity"
-            >
-              Cobrar →
-            </button>
-          </div>
-        </div>
-      </div>
+      <img
+        src="/micaja_principal.png"
+        alt="MI CAJA en acción"
+        class="w-full h-full object-cover"
+        loading="lazy"
+      />
     </div>
 
-    <!-- Precio card -->
     <div
       class="bento-card col-span-12 lg:col-span-4 rounded-2xl p-6 flex flex-col reveal"
       style="background: rgba(26,225,122,0.05); border: 1px solid rgba(26,225,122,0.2)"
     >
       <span class="text-verde text-xs uppercase tracking-widest font-semibold">Precio único</span>
       <div class="mt-3">
-        <span class="font-display font-extrabold text-verde" style="font-size: 3.5rem; line-height: 1">$3,000</span>
+        <span class="font-display font-extrabold text-verde" style="font-size: 3.5rem; line-height: 1">$3,500</span>
         <span class="text-muted text-sm ml-2">MXN</span>
       </div>
       <p class="text-text font-semibold mt-2">Un solo pago. Tuyo para siempre.</p>
       <div class="mt-4 space-y-1.5 text-sm flex-1">
-        <p class="text-muted flex items-center gap-2"><span class="text-verde">✓</span> Soporte 24/7 incluido</p>
+        <p class="text-muted flex items-center gap-2"><span class="text-verde">✓</span> Sin mensualidades, nunca</p>
         <p class="text-muted flex items-center gap-2"><span class="text-verde">✓</span> 12 módulos completos</p>
         <p class="text-muted flex items-center gap-2"><span class="text-verde">✓</span> Actualizaciones de por vida</p>
         <p class="text-muted flex items-center gap-2"><span class="text-muted/60">✗</span> Mantenimiento de equipo (servicio aparte)</p>
@@ -131,28 +61,27 @@ const features = [
       </a>
     </div>
 
-    <!-- Soporte card -->
     <div
       class="bento-card col-span-12 lg:col-span-4 rounded-2xl p-6 flex flex-col reveal"
       style="background: rgba(26,108,255,0.05); border: 1px solid rgba(26,108,255,0.2)"
     >
-      <span class="text-azul text-xs uppercase tracking-widest font-semibold">Soporte</span>
+      <span class="text-azul text-xs uppercase tracking-widest font-semibold">Pago único</span>
       <div class="mt-3">
-        <span class="font-display font-extrabold text-azul" style="font-size: 3.5rem; line-height: 1">24/7</span>
+        <span class="font-display font-extrabold text-azul" style="font-size: 3.5rem; line-height: 1">$0</span>
+        <span class="text-muted text-sm ml-2">al mes</span>
       </div>
-      <p class="text-text font-semibold mt-2">Siempre disponible.</p>
+      <p class="text-text font-semibold mt-2">Invierte en crecer, no en pagar.</p>
       <p class="text-muted text-sm mt-2 flex-1">
-        Equipo local en Chihuahua. WhatsApp, llamada o visita presencial.
-        Sin bots, sin centros de llamadas.
+        Paga una vez y ya quedó. Cada mes que pasa, MI CAJA
+        te ahorra lo que otros sistemas te cobrarían en mensualidades.
       </p>
       <div class="mt-4 flex flex-wrap gap-2">
-        <span class="text-xs px-3 py-1 rounded-full" style="background: rgba(26,108,255,0.1); color: rgba(26,108,255,0.9)">WhatsApp</span>
-        <span class="text-xs px-3 py-1 rounded-full" style="background: rgba(26,108,255,0.1); color: rgba(26,108,255,0.9)">Llamada</span>
-        <span class="text-xs px-3 py-1 rounded-full" style="background: rgba(26,108,255,0.1); color: rgba(26,108,255,0.9)">Presencial</span>
+        <span class="text-xs px-3 py-1 rounded-full" style="background: rgba(26,108,255,0.1); color: rgba(26,108,255,0.9)">Sin mensualidades</span>
+        <span class="text-xs px-3 py-1 rounded-full" style="background: rgba(26,108,255,0.1); color: rgba(26,108,255,0.9)">Sin contratos</span>
+        <span class="text-xs px-3 py-1 rounded-full" style="background: rgba(26,108,255,0.1); color: rgba(26,108,255,0.9)">Tuyo para siempre</span>
       </div>
     </div>
 
-    <!-- Feature cards (8) -->
     {features.map((f) => (
       <div
         class="bento-card col-span-6 lg:col-span-4 rounded-2xl p-5 flex flex-col gap-3 reveal"
@@ -166,7 +95,6 @@ const features = [
       </div>
     ))}
 
-    <!-- Compat card -->
     <div
       class="bento-card col-span-12 lg:col-span-4 rounded-2xl p-6 reveal"
       style="background: #1e2332; border: 1px solid rgba(255,255,255,0.07)"
@@ -192,7 +120,6 @@ const features = [
 </section>
 
 <script>
-  // Cursor glow on bento cards
   document.querySelectorAll<HTMLElement>('.bento-card').forEach((card) => {
     card.addEventListener('mousemove', (e) => {
       const rect = card.getBoundingClientRect();

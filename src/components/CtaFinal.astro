@@ -6,15 +6,14 @@ const negocios = [
 ];
 
 const badges = [
-  { icon: '✅', text: '$3,000 pago único' },
-  { icon: '💬', text: 'Soporte 24/7 incluido' },
+  { icon: '✅', text: '$3,500 pago único' },
+  { icon: '💬', text: 'Atención directa incluida' },
   { icon: '📍', text: 'Chihuahua, México' },
   { icon: '⚡', text: 'Sin mensualidades' },
 ];
 ---
 
 <section id="contacto" class="py-24 relative overflow-hidden">
-  <!-- BG glow -->
   <div
     class="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] rounded-full blur-[100px] pointer-events-none"
     style="background: rgba(26,225,122,0.07)"
@@ -33,7 +32,6 @@ const badges = [
       </p>
     </div>
 
-    <!-- Form -->
     <div
       class="reveal rounded-2xl p-8"
       style="background: #1a1e28; border: 1px solid rgba(255,255,255,0.07)"
@@ -87,7 +85,6 @@ const badges = [
       </form>
     </div>
 
-    <!-- Trust badges -->
     <div class="flex flex-wrap justify-center gap-3 mt-8 reveal">
       {badges.map((b) => (
         <div
@@ -112,6 +109,6 @@ const badges = [
     const msg = encodeURIComponent(
       `Hola, me interesa MI CAJA punto de venta.\nMi negocio es: ${tipo}\nMi nombre es: ${nombre}`
     );
-    window.open(`https://wa.me/526141000000?text=${msg}`, '_blank', 'noopener,noreferrer');
+    window.open(`https://wa.me/526271745436?text=${msg}`, '_blank', 'noopener,noreferrer');
   });
 </script>

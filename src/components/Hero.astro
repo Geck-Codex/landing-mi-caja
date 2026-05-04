@@ -2,7 +2,6 @@
 ---
 <section class="relative min-h-screen flex flex-col items-center justify-center text-center overflow-hidden pt-16">
 
-  <!-- Video background -->
   <div class="absolute inset-0 z-0">
     <video
       autoplay muted loop playsinline
@@ -11,12 +10,10 @@
     >
       <source src="/videos/hero-loop.mp4" type="video/mp4" />
     </video>
-    <!-- Gradient fallback when no video -->
     <div class="absolute inset-0 bg-gradient-to-br from-dark via-card to-dark"></div>
     <div class="absolute inset-0 bg-dark/70"></div>
   </div>
 
-  <!-- Animated orbs -->
   <div class="absolute inset-0 z-[1] pointer-events-none overflow-hidden">
     <div
       class="absolute top-1/4 -left-48 w-[700px] h-[700px] rounded-full blur-[140px] animate-orb-float1"
@@ -28,17 +25,14 @@
     ></div>
   </div>
 
-  <!-- Content -->
   <div class="relative z-10 max-w-4xl mx-auto px-6 py-24 flex flex-col items-center gap-7">
 
-    <!-- Badge -->
     <div class="hero-badge inline-flex items-center gap-2.5 border rounded-full px-4 py-2"
          style="border-color: rgba(26,225,122,0.25); background: rgba(26,225,122,0.06)">
       <span class="w-2 h-2 rounded-full bg-verde animate-pulse-dot flex-shrink-0"></span>
-      <span class="text-verde text-sm font-semibold">Software hecho en Chihuahua · Soporte 24/7 incluido</span>
+      <span class="text-verde text-sm font-semibold">Software hecho en Chihuahua · Pago único, sin mensualidades</span>
     </div>
 
-    <!-- H1 -->
     <h1
       class="hero-h1 font-display font-extrabold tracking-tight leading-none"
       style="font-size: clamp(3rem, 7.5vw, 6.5rem)"
@@ -47,24 +41,22 @@
       <span class="text-gradient">Chihuahua necesitaba</span>
     </h1>
 
-    <!-- Subheadline -->
     <p class="hero-sub text-lg text-muted max-w-xl leading-relaxed">
       Ventas, inventario, fiados, reportes y caja — todo en un solo sistema.
       <strong class="text-text font-semibold">Lo pagas una sola vez y ya quedó.</strong>
       Sin mensualidades. Sin renovaciones. Sin sorpresas.
     </p>
 
-    <!-- CTAs -->
     <div class="hero-actions flex flex-col sm:flex-row gap-3">
       <a
-        href="https://wa.me/526141000000?text=Hola%2C%20me%20interesa%20MI%20CAJA%20punto%20de%20venta.%0AMi%20negocio%20es%3A%20%5Btipo%5D%0AMi%20nombre%20es%3A%20%5Bnombre%5D"
+        href="https://wa.me/526271745436?text=Hola%2C%20me%20interesa%20MI%20CAJA%20punto%20de%20venta.%0AMi%20negocio%20es%3A%20%5Btipo%5D%0AMi%20nombre%20es%3A%20%5Bnombre%5D"
         target="_blank"
         rel="noopener noreferrer"
         class="bg-verde text-dark font-display font-bold text-base px-8 py-4 rounded-xl
                hover:glow-verde hover:-translate-y-0.5 active:translate-y-0
                transition-all duration-200"
       >
-        Obtener MI CAJA — $3,000 →
+        Obtener MI CAJA — $3,500 →
       </a>
       <a
         href="#funciones"
@@ -77,13 +69,12 @@
       </a>
     </div>
 
-    <!-- Stats row -->
     <div
       class="hero-stats w-full max-w-2xl grid grid-cols-2 sm:grid-cols-4 mt-4 rounded-2xl overflow-hidden"
       style="background: rgba(255,255,255,0.02); border: 1px solid rgba(255,255,255,0.07)"
     >
       <div class="flex flex-col items-center py-6 px-4 border-r" style="border-color: rgba(255,255,255,0.07)">
-        <span class="font-display font-bold text-3xl text-verde">$3,000</span>
+        <span class="font-display font-bold text-3xl text-verde">$3,500</span>
         <span class="text-verde/70 text-xs mt-1 font-semibold">Una sola vez · MXN</span>
       </div>
       <div class="flex flex-col items-center py-6 px-4 border-r sm:border-r" style="border-color: rgba(255,255,255,0.07)">
@@ -101,7 +92,6 @@
     </div>
   </div>
 
-  <!-- Scroll hint -->
   <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2 opacity-30">
     <span class="text-[10px] text-muted tracking-[0.2em] uppercase">Scroll</span>
     <div class="w-px h-8 bg-white/30 animate-pulse"></div>

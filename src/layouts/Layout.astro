@@ -9,7 +9,7 @@ interface Props {
 
 const {
   title = 'MI CAJA — Punto de Venta para Chihuahua',
-  description = 'Software de punto de venta para negocios de Chihuahua. Ventas, inventario, fiados, reportes y caja. $3,000 MXN pago único. Soporte 24/7 incluido.',
+  description = 'Software de punto de venta para negocios de Chihuahua. Ventas, inventario, fiados, reportes y caja. $3,500 MXN pago único, sin mensualidades.',
   ogImage = '/og-image.png',
 } = Astro.props;
 ---
@@ -22,7 +22,6 @@ const {
     <meta name="description" content={description} />
     <meta name="theme-color" content="#07090F" />
 
-    <!-- OG / Social -->
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -31,11 +30,9 @@ const {
     <meta property="twitter:title" content={title} />
     <meta property="twitter:description" content={description} />
 
-    <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" sizes="any" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
-    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -51,7 +48,6 @@ const {
 </html>
 
 <script>
-  // Scroll reveal
   const revealObserver = new IntersectionObserver(
     (entries) => entries.forEach((e) => {
       if (e.isIntersecting) e.target.classList.add('visible');
@@ -60,7 +56,6 @@ const {
   );
   document.querySelectorAll('.reveal').forEach((el) => revealObserver.observe(el));
 
-  // Stagger delay on reveal groups
   document.querySelectorAll('[data-stagger]').forEach((group) => {
     Array.from(group.children).forEach((child, i) => {
       (child as HTMLElement).style.transitionDelay = `${i * 0.1}s`;

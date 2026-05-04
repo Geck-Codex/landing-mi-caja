@@ -1,46 +1,46 @@
 ---
 const cases = [
   {
-    type:   'Abarrotes',
-    title:  'Para tu abarrote',
-    desc:   'Cobra, controla stock y fiados en un solo lugar.',
-    video:  '/videos/abarrote.mp4',
-    color:  '#1AE17A',
+    type:  'Abarrotes',
+    title: 'Para tu abarrote',
+    desc:  'Cobra, controla stock y fiados en un solo lugar.',
+    img:   'https://images.unsplash.com/photo-1604719312566-8912e9227c6a?w=800&h=600&fit=crop&q=80',
+    color: '#1AE17A',
   },
   {
-    type:   'Restaurantes',
-    title:  'Para tu restaurante',
-    desc:   'Mesas, órdenes rápidas y corte de caja sin errores.',
-    video:  '/videos/restaurante.mp4',
-    color:  '#1A6CFF',
+    type:  'Restaurantes',
+    title: 'Para tu restaurante',
+    desc:  'Mesas, órdenes rápidas y corte de caja sin errores.',
+    img:   'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&h=600&fit=crop&q=80',
+    color: '#1A6CFF',
   },
   {
-    type:   'Fondas',
-    title:  'Para tu fonda',
-    desc:   'Control de platillos del día, fiados y caja fácil.',
-    video:  '/videos/fonda.mp4',
-    color:  '#1AE17A',
+    type:  'Fondas',
+    title: 'Para tu fonda',
+    desc:  'Control de platillos del día, fiados y caja fácil.',
+    img:   'https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800&h=600&fit=crop&q=80',
+    color: '#1AE17A',
   },
   {
-    type:   'Minisupers',
-    title:  'Para tu minisúper',
-    desc:   'Inventario amplio, múltiples cajeros y reportes diarios.',
-    video:  '/videos/minisupeer.mp4',
-    color:  '#1A6CFF',
+    type:  'Minisupers',
+    title: 'Para tu minisúper',
+    desc:  'Inventario amplio, múltiples cajeros y reportes diarios.',
+    img:   'https://images.unsplash.com/photo-1534483509719-3feaee7c30da?w=800&h=600&fit=crop&q=80',
+    color: '#1A6CFF',
   },
   {
-    type:   'Farmacias',
-    title:  'Para tu farmacia',
-    desc:   'Escaneo de código de barras y alertas de caducidad.',
-    video:  '/videos/farmacia.mp4',
-    color:  '#1AE17A',
+    type:  'Farmacias',
+    title: 'Para tu farmacia',
+    desc:  'Escaneo de código de barras y alertas de caducidad.',
+    img:   'https://images.unsplash.com/photo-1471864190281-a93a3070b6de?w=800&h=600&fit=crop&q=80',
+    color: '#1AE17A',
   },
   {
-    type:   'Estéticas',
-    title:  'Para tu estética',
-    desc:   'Servicios, productos y clientes habituales en un sistema.',
-    video:  '/videos/estetica.mp4',
-    color:  '#1A6CFF',
+    type:  'Estéticas',
+    title: 'Para tu estética',
+    desc:  'Servicios, productos y clientes habituales en un sistema.',
+    img:   'https://images.unsplash.com/photo-1521590832167-7bcbfaa6381f?w=800&h=600&fit=crop&q=80',
+    color: '#1A6CFF',
   },
 ];
 ---
@@ -61,32 +61,20 @@ const cases = [
       <div
         class="video-card group relative overflow-hidden rounded-2xl cursor-pointer"
         style="height: 400px"
-        data-video
       >
-        <!-- Fallback gradient bg -->
-        <div
-          class="absolute inset-0"
-          style={`background: linear-gradient(135deg, ${c.color}15, #13161e)`}
-        ></div>
-
-        <video
-          muted
-          loop
-          playsinline
-          preload="none"
-          class="absolute inset-0 w-full h-full object-cover transition-transform duration-500"
+        <img
+          src={c.img}
+          alt={c.type}
+          class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
           style="transition-timing-function: cubic-bezier(.25,.46,.45,.94)"
-        >
-          <source src={c.video} type="video/mp4" />
-        </video>
+          loading="lazy"
+        />
 
-        <!-- Overlay -->
         <div
           class="overlay absolute inset-0 transition-opacity duration-500"
           style="background: rgba(7,9,15,0.72)"
         ></div>
 
-        <!-- Content -->
         <div class="absolute bottom-0 left-0 right-0 p-6 z-10">
           <span
             class="text-xs font-semibold uppercase tracking-[0.2em]"
@@ -107,21 +95,13 @@ const cases = [
 </section>
 
 <script>
-  document.querySelectorAll<HTMLElement>('[data-video]').forEach((card) => {
-    const video = card.querySelector('video')!;
+  document.querySelectorAll<HTMLElement>('.video-card').forEach((card) => {
     const overlay = card.querySelector<HTMLElement>('.overlay')!;
-    const videoEl = card.querySelector<HTMLVideoElement>('video')!;
-
     card.addEventListener('mouseenter', () => {
-      video?.play().catch(() => {});
       overlay.style.background = 'rgba(7,9,15,0.2)';
-      videoEl.style.transform = 'scale(1.04)';
     });
-
     card.addEventListener('mouseleave', () => {
-      video?.pause();
       overlay.style.background = 'rgba(7,9,15,0.72)';
-      videoEl.style.transform = 'scale(1)';
     });
   });
 </script>
